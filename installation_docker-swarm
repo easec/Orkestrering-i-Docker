@@ -1,0 +1,84 @@
+Docker Swarm
+
+##########################################################################################
+
+Easec-Linux1
+
+
+sudo ufw allow 2377/tcp && sudo ufw allow 7946/udp && sudo ufw allow 7946/tcp && sudo ufw allow 4789/udp && sudo ufw allow 80/tcp
+
+sudo ufw reload && sudo ufw enable
+
+sudo service docker restart
+
+sudo nano /etc/hosts           Verifiera
+
+##########################################################################################
+
+Easec-Linux2
+
+
+ssh Easec-Linux2
+
+sudo ufw allow 2377/tcp && sudo ufw allow 7946/udp && sudo ufw allow 7946/tcp && sudo ufw allow 4789/udp && sudoufw allow 80/tcp && sudo ufw allow 22/tcp
+
+sudo ufw reload && sudo ufw enable
+
+sudo service docker restart
+
+exit
+
+##########################################################################################
+
+Easec-Linux3
+
+
+ssh Easec-Linux3
+
+sudo ufw allow 2377/tcp && sudo ufw allow 7946/udp && sudo ufw allow 7946/tcp && sudo ufw allow 4789/udp && sudoufw allow 80/tcp && sudo ufw allow 22/tcp
+
+sudo ufw reload && sudo ufw enable
+
+sudo service docker restart
+
+exit
+
+##########################################################################################
+
+Easec-Linux1
+
+docker swarm init --advertise-addr 192.168.1.21
+
+Kopiera kommando med nyckel
+
+
+##########################################################################################
+
+Easec-Linux2
+
+
+ssh Easec-Linux2
+
+Kopiera och kör.
+
+exit
+
+
+##########################################################################################
+
+Easec-Linux3
+
+
+ssh Easec-Linux3
+
+Kopiera och kör.
+
+exit
+
+
+##########################################################################################
+
+Easec-Linux1
+
+
+docker node ls
